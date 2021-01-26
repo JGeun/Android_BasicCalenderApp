@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BasicCalendarApp</string>
+
+    <string name="month_value_temp">1</string>
+    <string name="month_unit">월</string>
+
+    <string name="year_value_temp">2021</string>
+    <string name="year_unit">년</string>
+
+    <string name="day_value_temp">1</string>
+</resources>
