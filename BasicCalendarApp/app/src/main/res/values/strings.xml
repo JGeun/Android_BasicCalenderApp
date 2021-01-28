@@ -8,4 +8,12 @@
     <string name="year_unit">년</string>
 
     <string name="day_value_temp">1</string>
+
+    <string name="week_unit_mon">월</string>
+    <string name="week_unit_tue">화</string>
+    <string name="week_unit_wed">수</string>
+    <string name="week_unit_thu">목</string>
+    <string name="week_unit_fri">금</string>
+    <string name="week_unit_sat">토</string>
+    <string name="week_unit_sun">일</string>
 </resources>
