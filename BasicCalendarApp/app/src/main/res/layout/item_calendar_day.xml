@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/item_ll_calendar_block"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/item_calendar_day_click_before"
+    android:clickable="true"
+    android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"

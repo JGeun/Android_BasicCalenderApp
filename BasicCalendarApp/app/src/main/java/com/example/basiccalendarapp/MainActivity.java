@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView calendarDayView = findViewById(R.id.main_rv_calendarDay);
-        int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext(), 150);
+        int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext(), 60);
         calendarDayView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
-        CalendarAdapter calendarAdapter = new CalendarAdapter();
+        CalendarAdapter calendarAdapter = new CalendarAdapter(this);
         calendarDayView.setAdapter(calendarAdapter);
     }
 }
