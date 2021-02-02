@@ -2,11 +2,15 @@ package com.example.basiccalendarapp.viewpager;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.basiccalendarapp.MainActivity;
+import com.example.basiccalendarapp.R;
 
 public class CalendarMonthAdapter extends FragmentStateAdapter {
     private Context context;
@@ -19,12 +23,12 @@ public class CalendarMonthAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         Fragment fragment = new CalendarMonthFragment();
-        Bundle args = new Bundle();
+        TextView monthValue =((MainActivity)context).findViewById(R.id.main_tv_month_value);
         return fragment;
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 12;
     }
 }
