@@ -22,8 +22,7 @@ public class CalendarMonthAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Fragment fragment = new CalendarMonthFragment();
-        TextView monthValue =((MainActivity)context).findViewById(R.id.main_tv_month_value);
+        Fragment fragment = new CalendarMonthFragment(position+1);
         return fragment;
     }
 

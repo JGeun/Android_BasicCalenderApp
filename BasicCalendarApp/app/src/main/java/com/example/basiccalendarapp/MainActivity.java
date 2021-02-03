@@ -17,13 +17,14 @@ import com.example.basiccalendarapp.viewpager.CalendarMonthAdapter;
 import com.example.basiccalendarapp.viewpager.CalendarMonthFragment;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager;
     CalendarMonthAdapter calendarAdapter;
-    int selectedPos = 0;
-    int scrollPos = 0;
+    private ArrayList<ArrayList<Integer>> monthArray = new ArrayList<>();
+    private int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.main_vp_calendar_month);
         viewPager.setAdapter(calendarAdapter);
 
-
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -45,10 +45,14 @@ public class MainActivity extends AppCompatActivity {
                 monthValue.setText(Integer.toString(position+1));
             }
         });
+
         long now = System.currentTimeMillis();
         Date mDate = new Date(now);
         SimpleDateFormat simpleDate = new SimpleDateFormat("MM");
         int currentMonth = Integer.parseInt(simpleDate.format(mDate));
         viewPager.setCurrentItem(currentMonth-1);
+    }
+
+    void setMonth(){
     }
 }

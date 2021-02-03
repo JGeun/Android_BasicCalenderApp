@@ -17,6 +17,10 @@ import com.example.basiccalendarapp.R;
 import com.example.basiccalendarapp.recyclerview.CalendarAdapter;
 
 public class CalendarMonthFragment extends Fragment {
+    private int month;
+    public CalendarMonthFragment(int month){
+        this.month = month;
+    }
 
     @Nullable
     @Override
