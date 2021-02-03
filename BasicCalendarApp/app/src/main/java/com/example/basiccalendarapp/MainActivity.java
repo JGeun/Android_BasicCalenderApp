@@ -16,6 +16,9 @@ import com.example.basiccalendarapp.recyclerview.CalendarAdapter;
 import com.example.basiccalendarapp.viewpager.CalendarMonthAdapter;
 import com.example.basiccalendarapp.viewpager.CalendarMonthFragment;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager;
     CalendarMonthAdapter calendarAdapter;
@@ -42,20 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 monthValue.setText(Integer.toString(position+1));
             }
         });
-
-       /* RecyclerView calendarDayView = findViewById(R.id.main_rv_calendarDay);
-        int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext(), 60);
-        calendarDayView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
-        CalendarAdapter calendarAdapter = new CalendarAdapter(this);
-        calendarDayView.setAdapter(calendarAdapter);*/
-    }
-}
-
-class Utility {
-    public static int calculateNoOfColumns(Context context, float columnWidthDp) { // For example columnWidthdp=180
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
-        int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
-        return noOfColumns;
+        long now = System.currentTimeMillis();
+        Date mDate = new Date(now);
+        SimpleDateFormat simpleDate = new SimpleDateFormat("MM");
+        int currentMonth = Integer.parseInt(simpleDate.format(mDate));
+        viewPager.setCurrentItem(currentMonth-1);
     }
 }
